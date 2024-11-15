@@ -1,0 +1,78 @@
+
+<div class="container">
+<form [formGroup]="registerForm" (ngSubmit)="registerSubmited()" class="border p-3 rounded-3">
+    <div class="row g-0">
+        <div class="col text-center p-2 mb-3 bg-light">
+            <span>Register</span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col">
+            <label for="firstname" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="firstname"
+            formControlName="firstname">
+        </div>
+        <div class="col">
+            <label for="lastname" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="lastname"
+            formControlName="lastname">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email"
+            formControlName="email">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col">
+            <label for="mobileNumber" class="form-label">Mobile Number</label>
+            <input type="text" class="form-control" id="mobileNumber"
+            formControlName="mobileNumber">
+            <div class="form-text"></div>
+        </div>
+        <div class="col">
+            <div class="m-3">Gender</div>
+            <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input" value="male" id="male"
+                formControlName="gender">
+                <label class="form-check-label" for="male">Male</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input" value="female" id="female"
+                formControlName="gender">
+                <label class="form-check-label" for="female">Female</label>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password"
+            formControlName="password">
+            <div class="form-text"></div>
+        </div>
+        <div class="col">
+            <label for="retypepassword" class="form-label">Retype Password</label>
+            <input type="password" class="form-control" id="retypepassword"
+            formControlName="retypepassword">
+            <div class="form-text text-danger" [ngStyle]="{'display':repeatPass}">
+                Password not matched
+            </div>
+        </div>
+    </div> 
+    <div class="row mb-3">
+        <div class="col" routerLink="/login">
+            Already have account? <span class="text-primary">Login</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">Submit</button>
+            </div>
+        </div>
+    </div>
+</form>
+</div>
